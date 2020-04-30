@@ -1,0 +1,31 @@
+
+<h1>To do List Search</h1>
+
+<div>
+    <input class="input_search" type="text" [(ngModel)]="keyword" (keyup)="search_input_keyup($event)">
+
+    <h3>已经激活的</h3>
+    <ul>
+        <li *ngFor="let item of search_list; let key=index;">
+
+            <span *ngIf="item.statu">
+                <input type="checkbox" value="{{item.statu}}" [(ngModel)]="item.statu" (change)="checkboxClick($event)">
+                <span>{{item.title}}</span>
+                <button (click)="delete_data(key)"></button>
+            </span>
+            
+        </li>
+    </ul>
+    <h3>还未激活的</h3>
+    <ul>
+        <li *ngFor="let item of search_list; let key=index;">
+
+            <span *ngIf="item.statu==false">
+                <input type="checkbox" value="{{item.statu}}" [(ngModel)]="item.statu" (change)="checkboxClick($event)">
+                <span>{{item.title}}</span>
+                <button (click)="delete_data(key)"></button>
+            </span>
+            
+        </li>
+    </ul>
+</div>

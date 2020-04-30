@@ -1,0 +1,29 @@
+
+.left_content{
+    width: 20%;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    top: 50px;
+    background-color: skyblue;
+    li{
+        list-style: outside;
+        a{
+            display: inline-block;
+            padding: 20px 20px;
+        }
+
+        .active{
+            color: red;
+        }
+    }
+}
+
+.right_content{
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    bottom: 0px;
+    left: 20%;
+    background-color: slateblue;
+}

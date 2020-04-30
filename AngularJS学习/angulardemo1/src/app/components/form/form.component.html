@@ -1,0 +1,44 @@
+<h1 class="title">在线登记表</h1>
+
+<div class="people_list">
+    <ul>
+        <li class="username">
+            <p>姓名:</p>
+            <input type="text" [(ngModel)]="user.username"/>
+        </li>
+
+        <li class="sex">
+            <p>性别:</p>
+            <input type="radio" value="1" name="sex" id="sex1" [(ngModel)]="user.sex"><label for="sex1">男</label>
+            <input type="radio" value="2" name="sex" id="sex2" [(ngModel)]="user.sex"><label for="sex2">女</label>
+        </li>
+
+        <li class="city">
+            <p>城市:</p>
+            <select name="city" id="city" [(ngModel)]="user.city">
+                <option [value]="city"  *ngFor="let city of city_list">{{city}}</option>
+            </select>
+        </li>
+
+        <li class="favorite">
+            <p>爱好:</p>
+
+            <span *ngFor="let item of user.favorite_list; let key=index;">
+                <input type="checkbox" [id]="'check'+key" [(ngModel)]="item.selected" />
+                <label for="'check'+key">{{item.name}}</label>  
+            </span>
+        </li>
+
+        <li class="mark">
+            <p>备注:</p>
+            <textarea name="mark" [(ngModel)]="user.mark" id="" cols="30" rows="10"></textarea>
+        </li>
+    </ul>
+</div>
+
+<button (click)="submit()">获取表单内容(提交)</button>
+
+<div>{{ user | json }}</div>
+
+
+

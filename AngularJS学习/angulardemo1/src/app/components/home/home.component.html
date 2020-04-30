@@ -1,0 +1,23 @@
+
+
+<h1>通过原生JS 获取dom 结点修改样式</h1>
+<ul>
+    <li id="thank1">原生JS获取Dom结点</li>
+    <li id="thank2">AngularJS ViewChild 获取标签结点</li>
+</ul>
+
+<h1>通过ViewChild 获取dom 结点修改样式</h1>
+<div #mybox>
+    I am a handsome boy!
+</div>
+
+<hr>
+<br>
+<br>
+<br>
+<app-header #myHeader></app-header>
+<div style="width: 200px; height: 200px; background-color: seagreen;">
+    这里是父组件访问子组件的方法
+</div>
+
+<button style="border: 1px solid red;" (click)="getChildWay()">调用子组件中的方法</button>

@@ -1,0 +1,10 @@
+
+<h1 style="text-align: center;">欢迎来到 I am a handsome boy</h1>
+
+<ul class="header">
+  <li *ngFor="let item of func_list; let key=index;">
+    <a [routerLink]="[item.path]" routerLinkActive="active">{{item.title}}</a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>

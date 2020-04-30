@@ -1,0 +1,91 @@
+.title{
+    text-align: center;
+}
+
+// .people_list{
+//     width: 100%;
+//     background-color: khaki;
+// }
+
+.people_list ul{
+    width: 100%;
+    text-align: center;
+}
+.people_list ul li{
+    display: inline-block;
+    width: 80%;
+    text-align: left;
+    position: relative;
+}
+
+.username p ,.sex p , .city p , .favorite p{
+    display: inline-block;
+    width: 20%;
+    height: 50px;
+    line-height: 50px;
+}
+
+.username input {
+    display: inline-block;
+    width: 60%;
+    border: 1px solid gray;
+    height: 30px;
+    line-height: 30px;
+}
+
+.sex input {
+    display: inline-block;
+    width: 60px;
+    height: 20px;
+}
+
+.sex label {
+    display: inline-block;  
+}
+
+.city select {
+    display: inline-block;
+    width: 100px;
+    border: 1px solid grey;
+}
+
+.favorite span input {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 2px;
+    border: 1px solid grey;
+
+}
+
+.favorite span label {
+    display: inline-block;  
+}
+
+.mark textarea {
+    border: 1px solid grey;
+}
+
+// .people_list ul li p {
+//     display: inline-block;
+//     text-align: left;
+//     width: 20%;
+// }
+
+// .people_list ul li input {
+//     display: inline-block;
+//     text-align: left;
+//     width: 80%;
+// }
+
+// .username {
+//     display: inline-block;
+//     width: 60%;
+//     height: 50px;
+//     border: 1px solid gray;
+//     margin-top: 25px;
+// }
+
+// .sex input {
+//     width: 30px;
+// }

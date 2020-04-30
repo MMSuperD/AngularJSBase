@@ -1,0 +1,130 @@
+
+<h1>这个是模板里面绑定数据</h1>
+<h2>我是新闻文件</h2>
+<h2>{{title}}</h2>
+<p>{{content}}</p>
+<p>姓名:{{user.name}}</p>
+<p>年龄:{{user.age}}</p>
+
+<hr>
+<h1>模板标签里面的属性</h1>
+<div title="静态属性">模板标签:静态属性</div>
+<div [title]="content">模板标签:动态属性</div>
+
+<hr>
+<h1>解析html 代码标签</h1>
+<div>
+    {{html_content}}
+</div>
+<div [innerHTML]="html_content" class="red"></div>
+
+<hr>
+<h1>angular 里面的循环数据</h1>
+<ol>
+    <li *ngFor="let item of listArray">
+        {{item}}
+    </li>
+</ol>
+
+<hr>
+<h1>angular 里面的循环数据 显示索引</h1>
+<ol>
+    <li *ngFor="let item of listArray; let key=index;">
+        {{item}} ---{{key}}
+    </li>
+</ol>
+
+hr>
+<h1>angular 里面的复杂数据循环</h1>
+<ol>
+    <li *ngFor="let item of cars">
+        {{item.name}}
+        <ol>
+            <li *ngFor="let item2 of item.version">
+                {{item2.title}} ---  {{item2.price}}
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<hr>
+<h1>引入静态图片</h1>
+<img src="assets/images/banner001.png" alt="banner001">
+<h1>引入动态图片</h1>
+<img [src]="imgUrl" alt="图片">
+
+<hr>
+<h1>条件判断语句 *ngIf</h1>
+<div *ngIf="flag">
+    我是true
+</div>
+<div *ngIf="!flag">
+    我是false
+</div>
+
+<hr>
+<h1>条件判断语句 *ngIf 实现else</h1>
+<ol>
+    <li *ngFor="let item of listArray; let key=index;">
+        <span *ngIf="key==1">{{item}} ---{{key}}</span>
+        <span *ngIf="key!=1" class="red">{{item}} ---{{key}}</span>
+    </li>
+</ol>
+
+<hr>
+<h1>条件判断语句 *ngSwitch</h1>
+<div [ngSwitch]="switchFlag">
+    <div *ngSwitchCase="1">已支付</div>
+    <div *ngSwitchCase="2">未支付</div>
+    <div *ngSwitchCase="3">已下单</div>
+    <div *ngSwitchCase="4">还未下单</div>
+    <div *ngSwitchDefault>默认</div>
+</div>
+
+<hr>
+<h1>属性 [ngClass]和 [ngStyle] 使用</h1>
+
+<div [ngClass]="{red: true}"> 这个是 ngClass 演示</div>
+<div [ngClass]="{red: false}"> 这个是 ngClass 演示</div>
+
+<ol>
+    <li *ngFor="let item of listArray; let key=index;" [ngClass]="{'red': key==1,'blue':key==2}">
+        {{item}} ---{{key}}
+    </li>
+</ol>
+
+<p [ngStyle]="{'color': 'blue'}">我是一个p标签</p>
+<p [ngStyle]="{'color': styleValue}">我是一个p标签</p>
+
+<hr>
+<h1>管道 使用</h1>
+<p>
+    {{today | date:"yyyy-MM-dd HH:mm:ss"}}
+</p>
+
+<hr>
+<h1>事件</h1>
+<p>hello</p>
+<button style="background-color: purple; height: 40px; display: block;" (click)="run()">点我执行TypeScript中的方法</button>
+<button style="background-color:seagreen; height: 40px; display: block;" (click)="getData()">执行事件获取数据</button>
+<button style="background-color:salmon; height: 40px; display: block;" (click)="changeData()">执行事件改变数据</button>
+
+<hr>
+<h1>键盘事件</h1>
+<!-- <input (keydown)="keyDown($event)">
+</input> -->
+<input style="border: 1px solid red;" type="text" (keydown)="keyDown($event)">
+  
+<input style="border: 1px solid red;" type="text" (keyup)="keyUp($event)">
+
+<hr>
+<h1>
+    双向数据绑定 只支持表单 必须到入 模块 
+    <!-- import { FormsModule } from "@angular/forms"; -->
+</h1>
+<input style="border: 1px solid red;" type="text" [(ngModel)]="keyword">
+<div>
+    {{keyword}}
+</div>
+
+<button style="border: 1px solid red;" (click)="modifyDefault()">修改默认值</button>

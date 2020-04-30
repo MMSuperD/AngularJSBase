@@ -1,0 +1,25 @@
+<h1>shop works!</h1>
+
+<!-- <ul> -->
+    <!-- <li *ngFor="let item of show_list; let key=index;"> -->
+        <!-- <a [routerLink]="['/detail',item.id]" >{{item.id}}---{{item.name}}</a> -->
+        <!-- <a [routerLink]="['/detail/'+item.id]" >{{item.id}}---{{item.name}}</a> -->
+        <!-- 这个是 get 传值 -->
+        <!-- <a [routerLink]="['/detail']" [queryParams]="{aid:key,usename:'fan'}" >{{item.id}}---{{item.name}}</a> -->
+        <!-- 这个是动态路由 -->
+        <!-- <a [routerLink]="['/detail/',item.id]" >{{item.id}}---{{item.name}}</a> -->
+
+    <!-- </li> -->
+<!-- </ul> -->
+
+<ul>
+    <p>这个是url get 传值</p>
+    <li>
+        <a [routerLink]="['/detail']" [queryParams]="{aid:1,usename:'fan'}" >点击看url 的变化</a>
+    </li>
+
+    <p>这个是动态路由传值</p>
+    <li>
+        <a [routerLink]="['/detail/',1]" >点击看url 的变化</a>
+    </li>
+</ul>

@@ -1,0 +1,11 @@
+
+<app-navigator #child_nav (outer)="outpuWayRun()" [title]="title"[msg]="msg" [run]="run" [childcontent]="this"></app-navigator>
+  
+<div>
+    我是主组件 内容
+</div>
+
+<button (click)="getChildData()">获取子组件的数据</button>
+<button (click)="getChildWay()">获取子组件的方法</button>
+
+
